@@ -51,26 +51,6 @@ Becomes:
 
 ---
 
-## 🎨 Common `chai-` Classes
-
-| Category       | Class Example         | CSS Applied               |
-| -------------- | --------------------- | ------------------------- |
-| **Spacing**    | `chai-p-10`           | padding: 10px             |
-|                | `chai-m-20`           | margin: 20px              |
-|                | `chai-px-5`           | padding-left & right: 5px |
-| **Typography** | `chai-fs-18`          | font-size: 18px           |
-|                | `chai-fw-bold`        | font-weight: bold         |
-|                | `chai-text-center`    | text-align: center        |
-| **Colors**     | `chai-c-white`        | color: white              |
-|                | `chai-bg-black`       | background-color: black   |
-| **Flexbox**    | `chai-d-flex`         | display: flex             |
-|                | `chai-justify-center` | justify-content: center   |
-|                | `chai-align-center`   | align-items: center       |
-| **Size**       | `chai-w-200`          | width: 200px              |
-|                | `chai-h-100`          | height: 100px             |
-
----
-
 ## 🖼️ Layout Sections
 
 1. **Websites** – Courses, dashboards, coding platforms.
