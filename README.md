@@ -2,6 +2,8 @@
 
 **ChaiCode Resources** is a centralized platform giving students and developers **quick access to learning materials, labs, assignments, and team portfolios**. Everything is neatly organized so you can find resources efficiently.
 
+🌐 Live Demo: https://chaicoderesources.netlify.app/
+
 ---
 
 ## 🚀 Features
