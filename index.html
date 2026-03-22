@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChaiCode Resources ☕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        body.soft-mode {
+            background-color: #f7f7f7;
+            color: #111;
+        }
+
+        .chai-navbar {
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1f1f1f;
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .chai-navbar .chai-logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        .chai-nav-links {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .chai-nav-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .chai-nav-links a:hover {
+            background-color: #333;
+        }
+
+        .chai-git-btn {
+            background-color: #3b82f6;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .chai-git-btn:hover {
+            background-color: #2563eb;
+        }
+
+        #chai-darkModeToggle {
+            background-color: #111;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #chai-darkModeToggle:hover {
+            background-color: #333;
+        }
+
+        body.soft-mode .chai-navbar {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        body.soft-mode .chai-nav-links a {
+            color: #111;
+        }
+
+        body.soft-mode .chai-nav-links a:hover {
+            background-color: #eee;
+        }
+
+        body.soft-mode .chai-git-btn {
+            background-color: #3b82f6;
+            color: #fff;
+        }
+
+        body.soft-mode #chai-darkModeToggle {
+            background-color: #eee;
+            color: #111;
+        }
+
+        .chai-hero {
+            text-align: center;
+            padding: 80px 16px 60px;
+            background: linear-gradient(135deg, #1f1f1f 0%, #111111 100%);
+            position: relative;
+            overflow: hidden;
+            border-bottom-left-radius: 50% 10%;
+            border-bottom-right-radius: 50% 10%;
+        }
+
+        .chai-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .chai-hero h1 span {
+            color: #22c55e;
+            background: linear-gradient(120deg, #22c55e, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .chai-hero p {
+            font-size: 1.25rem;
+            color: #ccc;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        body.soft-mode .chai-hero {
+            background: linear-gradient(135deg, #f7f7f7 0%, #e3e3e3 100%);
+        }
+
+        body.soft-mode .chai-hero p {
+            color: #333;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 32px 0 16px;
+            font-weight: 600;
+        }
+
+        .chai-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 32px;
+            justify-items: center;
+            padding: 0 16px 48px;
+        }
+
+        /* Cards */
+        .chai-card {
+            width: 140px;
+            height: 140px;
+            border-radius: 20px 50px 20px 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: #fff;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+        }
+
+        .chai-card .chai-icon-box {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+            transition: 0.3s;
+        }
+
+        .chai-card span {
+            font-size: 0.95rem;
+        }
+
+        /* Card Gradients */
+        .chai-card:nth-child(1) {
+            background: linear-gradient(135deg, #ff6a00, #ee0979);
+        }
+
+        .chai-card:nth-child(2) {
+            background: linear-gradient(135deg, #f7971e, #ffd200);
+        }
+
+        .chai-card:nth-child(3) {
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+        }
+
+        .chai-card:nth-child(4) {
+            background: linear-gradient(135deg, #f43b47, #453a94);
+        }
+
+        .chai-card:nth-child(5) {
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+        }
+
+        .chai-card:nth-child(6) {
+            background: linear-gradient(135deg, #ff6a00, #ee0979);
+        }
+
+        .chai-card:nth-child(7) {
+            background: linear-gradient(135deg, #f7971e, #ffd200);
+        }
+
+        .chai-card:nth-child(8) {
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+        }
+
+        .chai-card:nth-child(9) {
+            background: linear-gradient(135deg, #f43b47, #453a94);
+        }
+
+        .chai-card:nth-child(10) {
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+        }
+
+        /* Hover effects */
+        .chai-card:hover {
+            transform: scale(1.15);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+        }
+
+        .chai-card:hover .chai-icon-box {
+            transform: scale(1.2);
+        }
+
+        /* Dark Mode Cards */
+        body.dark-mode .chai-card:nth-child(1) {
+            background: linear-gradient(135deg, #ff00cc, #333399);
+        }
+
+        body.dark-mode .chai-card:nth-child(2) {
+            background: linear-gradient(135deg, #00f260, #0575e6);
+        }
+
+        body.dark-mode .chai-card:nth-child(3) {
+            background: linear-gradient(135deg, #f953c6, #b91d73);
+        }
+
+        body.dark-mode .chai-card:nth-child(4) {
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+        }
+
+        body.dark-mode .chai-card:nth-child(5) {
+            background: linear-gradient(135deg, #fa709a, #fee140);
+        }
+
+        body.dark-mode .chai-card:nth-child(6) {
+            background: linear-gradient(135deg, #232526, #414345);
+        }
+
+        body.dark-mode .chai-card:nth-child(7) {
+            background: linear-gradient(135deg, #3a1c71, #1f4037);
+        }
+
+        body.dark-mode .chai-card:nth-child(8) {
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+        }
+
+        body.dark-mode .chai-card:nth-child(9) {
+            background: linear-gradient(135deg, #1d4350, #a43931);
+        }
+
+        body.dark-mode .chai-card:nth-child(10) {
+            background: linear-gradient(135deg, #0f2027, #2c5364);
+        }
+
+        /* Soft Mode Cards */
+        body.soft-mode .chai-card:nth-child(1) {
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            color: #111;
+        }
+
+        body.soft-mode .chai-card:nth-child(2) {
+            background: linear-gradient(135deg, #d4fc79, #96e6a1);
+            color: #111;
+        }
+
+        body.soft-mode .chai-card:nth-child(3) {
+            background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+            color: #111;
+        }
+
+        body.soft-mode .chai-card:nth-child(4) {
+            background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+            color: #111;
+        }
+
+        body.soft-mode .chai-card:nth-child(5) {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            color: #111;
+        }
+
+        body.soft-mode .chai-card:nth-child(6) {
+            background: linear-gradient(135deg, #d7ccc8, #a1887f);
+            color: #111;
+        }
+
+        body.soft-mode .chai-card:nth-child(7) {
+            background: linear-gradient(135deg, #c5e1a5, #8bc34a);
+            color: #111;
+        }
+
+        body.soft-mode .chai-card:nth-child(8) {
+            background: linear-gradient(135deg, #ffe0b2, #ffb74d);
+            color: #111;
+        }
+
+        body.soft-mode .chai-card:nth-child(9) {
+            background: linear-gradient(135deg, #bcaaa4, #8d6e63);
+            color: #111;
+        }
+
+        body.soft-mode .chai-card:nth-child(10) {
+            background: linear-gradient(135deg, #dcedc8, #aed581);
+            color: #111;
+        }
+
+        .chai-card .chai-icon-box {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+            transition: 0.3s;
+        }
+
+        .chai-card span {
+            font-size: 0.95rem;
+        }
+
+        .chai-card:hover {
+            transform: scale(1.15);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+        }
+
+        .chai-card:hover .chai-icon-box {
+            transform: scale(1.2);
+        }
+
+        footer.chai-footer {
+            background-color: #1f1f1f;
+            color: #fff;
+            text-align: center;
+            padding: 24px 16px;
+            margin-top: 40px;
+            border-top: 1px solid #333;
+            transition: all 0.3s ease;
+        }
+
+        footer.chai-footer a {
+            color: #22c55e;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+    </style>
+</head>
+
+<body class="dark-mode">
+    <div class="chai-navbar">
+        <div class="chai-logo">☕ ChaiCode</div>
+        <div class="chai-nav-links">
+            <a href="https://github.com/sudhanshumundhe" class="chai-git-btn" target="_blank">GitHub Resources</a>
+            <button id="chai-darkModeToggle" class="chai-btn">🌙</button>
+        </div>
+    </div>
+
+    <div class="chai-hero">
+        <h1>ChaiCode <span>Resources</span></h1>
+        <p>Quick access to all learning resources, labs, assignments, and member portfolios, organized by category.</p>
+    </div>
+
+    <!-- Section 1: Websites -->
+    <h2 id="websites">Websites</h2>
+    <div class="chai-grid">
+        <a href="https://courses.chaicode.com/learn" target="_blank" class="chai-card">
+            <div class="chai-icon-box">🎓</div>
+            <span>Courses</span>
+        </a>
+        <a href="https://www.masterji.co/dashboard" target="_blank" class="chai-card">
+            <div class="chai-icon-box">📝</div>
+            <span>Masterji Dashboard</span>
+        </a>
+        <a href="https://www.masterji.co/login" target="_blank" class="chai-card">
+            <div class="chai-icon-box">🔑</div>
+            <span>Masterji Login</span>
+        </a>
+        <a href="https://timearena.in/leaderboard" target="_blank" class="chai-card">
+            <div class="chai-icon-box">⏱️</div>
+            <span>TimeArena</span>
+        </a>
+        <a href="https://hashnode.com/" target="_blank" class="chai-card">
+            <div class="chai-icon-box">💻</div>
+            <span>Hashnode</span>
+        </a>
+    </div>
+
+    <!-- Section 2: Labs -->
+    <h2 id="labs">Labs</h2>
+    <div class="chai-grid">
+        <a href="https://labs.chaicode.com/html" target="_blank" class="chai-card">
+            <div class="chai-icon-box">🌐</div>
+            <span>HTML/CSS/JS</span>
+        </a>
+        <a href="https://flexbox.chaicode.com/" target="_blank" class="chai-card">
+            <div class="chai-icon-box">📐</div>
+            <span>Flexbox Lab</span>
+        </a>
+        <a href="https://grid.chaicode.com/game" target="_blank" class="chai-card">
+            <div class="chai-icon-box">🔳</div>
+            <span>Grid Lab Game</span>
+        </a>
+    </div>
+
+    <!-- Section 3: GitHub Resources -->
+    <h2 id="git">GitHub Resources for Chai Teams</h2>
+    <div class="chai-grid" style="grid-template-columns: repeat(5, 1fr); gap: 32px;">
+        <a href="https://github.com/chaicodehq" target="_blank" class="chai-card">
+            <div class="chai-icon-box">🏢</div><span>ChaiCode HQ</span>
+        </a>
+        <a href="https://github.com/orgs/chaicodehq/repositories" target="_blank" class="chai-card">
+            <div class="chai-icon-box">📂</div><span>Chai Repos</span>
+        </a>
+        <a href="https://github.com/hiteshchoudhary" target="_blank" class="chai-card">
+            <div class="chai-icon-box">👨‍💻</div><span>Hitesh Choudhary</span>
+        </a>
+        <a href="https://gist.github.com/Aestheticsuraj234" target="_blank" class="chai-card">
+            <div class="chai-icon-box">🧑‍💻</div><span>Suraj Gist</span>
+        </a>
+        <a href="https://github.com/Aestheticsuraj234" target="_blank" class="chai-card">
+            <div class="chai-icon-box">🧑‍💻</div><span>Suraj 234</span>
+        </a>
+        <a href="https://github.com/piyushgarg-dev" target="_blank" class="chai-card">
+            <div class="chai-icon-box">🧑‍💻</div><span>Piyush Garg</span>
+        </a>
+        <a href="https://github.com/anirudhuuu" target="_blank" class="chai-card">
+            <div class="chai-icon-box">🧑‍💻</div><span>Anirudh</span>
+        </a>
+    </div>
+
+    <!-- Section 4: Git Assignments / Masterji Blogs -->
+    <h2 id="git-assignments">Git Assignments / Masterji Blogs</h2>
+    <div class="chai-grid" style="grid-template-columns: repeat(5, 1fr); gap: 32px;">
+        <a href="https://classroom.github.com/a/fwCZoRgs" target="_blank" class="chai-card">
+            <div class="chai-icon-box">📂</div><span>Conditionals</span>
+        </a>
+        <a href="https://classroom.github.com/a/LXgTzkVh" target="_blank" class="chai-card">
+            <div class="chai-icon-box">📘</div><span>Datatypes Foundation</span>
+        </a>
+        <a href="https://classroom.github.com/a/ARempKK3" target="_blank" class="chai-card">
+            <div class="chai-icon-box">📗</div><span>Datatypes Intermediate</span>
+        </a>
+        <a href="https://classroom.github.com/a/pZ1cSgDU" target="_blank" class="chai-card">
+            <div class="chai-icon-box">🔁</div><span>Loops</span>
+        </a>
+        <a href="https://classroom.github.com/a/o2RfZZTy" target="_blank" class="chai-card">
+            <div class="chai-icon-box">⚡</div><span>Functions</span>
+        </a>
+        <a href="https://classroom.github.com/a/aFr2ku_l" target="_blank" class="chai-card">
+            <div class="chai-icon-box">⏳</div><span>JS Async OOPs</span>
+        </a>
+        <a href="https://classroom.github.com/a/iPDWaLTV" target="_blank" class="chai-card">
+            <div class="chai-icon-box">🌐</div><span>JS DOM</span>
+        </a>
+        <a href="https://www.masterji.co/blogs" target="_blank" class="chai-card">
+            <div class="chai-icon-box">✍️</div><span>Masterji Blogs</span>
+        </a>
+    </div>
+
+    <!-- Section 5: Eraser & Notes -->
+    <h2 id="eraser-notes">Eraser Board & Notes</h2>
+    <div class="chai-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 32px;">
+        <a href="https://hitesh.ai/cohort26-board" target="_blank" class="chai-card">
+            <div class="chai-icon-box">👨‍🏫</div>
+            <span>Hitesh Sir Board</span>
+        </a>
+        <a href="https://app.eraser.io/workspace/SUQ1b2W46Ru1EMNY3Xbn" target="_blank" class="chai-card">
+            <div class="chai-icon-box">📝</div>
+            <span>Piyush Sir Board</span>
+        </a>
+        <a href="https://excalidraw.com/#json=jEHt_ah2VoxtAzdTmwPlF,d-jG9ZdCE0tCQSHcyea2Sg" target="_blank"
+            class="chai-card">
+            <div class="chai-icon-box">👨‍🏫</div>
+            <span>AK 45 Notes</span>
+        </a>
+        <a href="https://www.canva.com/design/DAHBpwc4Zzs/Yd_fsaCytIQMGMBOcwaIsw/view?utm_content=DAHBpwc4Zzs&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hfd60770ed4"
+            target="_blank" class="chai-card">
+            <div class="chai-icon-box">📝</div>
+            <span>AK Sir Slides</span>
+        </a>
+        <a href="https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick" target="_blank"
+            class="chai-card">
+            <div class="chai-icon-box">👨‍🏫</div>
+            <span>Piyush Node.js Assignment</span>
+        </a>
+    </div>
+
+    <!-- Section 6: Chai Team Members -->
+    <h2 id="members">Chai Team Members / Portfolios</h2>
+    <div class="chai-grid" style="grid-template-columns: repeat(5, 1fr); gap: 32px;">
+        <a href="https://hiteshchoudhary.com/" target="_blank" class="chai-card">
+            <div class="chai-icon-box">🧑‍💻</div>
+            <span>Hitesh Choudhary</span>
+        </a>
+        <a href="https://www.piyushgarg.dev/" target="_blank" class="chai-card">
+            <div class="chai-icon-box">👨‍💻</div>
+            <span>Piyush Garg</span>
+        </a>
+        <a href="https://linktr.ee/yntp.me" target="_blank" class="chai-card">
+            <div class="chai-icon-box">🧑‍💻</div>
+            <span>Akash Kadlag</span>
+        </a>
+        <a href="https://anirudhjwala.in/" target="_blank" class="chai-card">
+            <div class="chai-icon-box">🧑‍💻</div>
+            <span>Anirudh Jwala</span>
+        </a>
+        <a href="https://www.surajkumarjha.me/" target="_blank" class="chai-card">
+            <div class="chai-icon-box">🧑‍💻</div>
+            <span>Suraj Kumarjha</span>
+        </a>
+        <a href="https://www.nikhilrathore.com/" target="_blank" class="chai-card">
+            <div class="chai-icon-box">🧑‍💻</div>
+            <span>Nikhil Rathore</span>
+        </a>
+        <a href="https://www.aryankumar.dev/" target="_blank" class="chai-card">
+            <div class="chai-icon-box">🧑‍💻</div>
+            <span>Aryan Kumar</span>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="chai-footer">
+        <p>© 2026 Sudhanshu Mundhe. All rights reserved.</p>
+        <p>
+            <a href="#websites">Websites</a> |
+            <a href="#labs">Labs</a> |
+            <a href="#git">GitHub</a> |
+            <a href="#members">Team</a>
+        </p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
