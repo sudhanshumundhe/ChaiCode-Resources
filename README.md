@@ -1,99 +1,127 @@
 # ☕ ChaiCode Resources
 
-**ChaiCode Resources** is a centralized hub for developers and students, offering fast access to coding materials, labs, assignments, and team portfolios. It is organized by categories, making it easier to explore educational content and GitHub repositories efficiently.
+**ChaiCode Resources** is a centralized platform giving students and developers **quick access to learning materials, labs, assignments, and team portfolios**. Everything is neatly organized so you can find resources efficiently.
 
 ---
 
-## 🔹 Key Highlights
+## 🚀 Features
 
-- **Category-driven structure**: Easily navigate websites, labs, GitHub resources, assignments, and team portfolios.  
-- **Interactive UI**: Cards with hover animations for better user engagement.  
-- **Dark & Soft modes**: Toggle between themes with a single click.  
-- **Responsive design**: Works seamlessly on desktop and mobile devices.  
-- **Quick access to learning resources**: Courses, assignments, and team projects are all in one place.
-
----
-
-## 🖥️ Main Sections
-
-### 1. Websites
-Direct links to key learning portals:
-- Courses: Interactive learning modules  
-- Masterji Dashboard: Track assignments  
-- Masterji Login: Access account  
-- TimeArena: Practice coding challenges  
-- Hashnode: Tech blogs and tutorials  
-
-### 2. Labs
-Hands-on practice labs:
-- HTML/CSS/JS lab  
-- Flexbox exercises  
-- Grid Lab game  
-
-### 3. GitHub Resources
-Team repositories and profiles:
-- ChaiCode HQ  
-- Chai Repos  
-- Individual team member GitHub accounts  
-
-### 4. Git Assignments / Masterji Blogs
-Direct links to assignments and blog resources for structured learning.
-
-### 5. Eraser & Notes
-Collaborative boards and notes:
-- Hitesh Sir Board  
-- Piyush Sir Board  
-- AK Sir Notes & Slides  
-- Node.js asynchronous assignment  
-
-### 6. Team Members / Portfolios
-Explore individual portfolios of ChaiCode team members:
-- Hitesh Choudhary  
-- Piyush Garg  
-- Akash Kadlag  
-- Anirudh Jwala  
-- Suraj Kumarjha  
-- Nikhil Rathore  
-- Aryan Kumar  
+* **Utility-first `chai-` CSS system**: Apply styles using expressive `chai-` classes without writing custom CSS.
+* **Theme support**: Toggle between Dark Mode & Soft Mode.
+* **Reusable components**: Cards, buttons, titles, hero sections.
+* **Dynamic JS engine**: Automatically applies styles and removes `chai-` classes.
+* **Grid-based layout**: Responsive display for multiple links.
+* **Organized resources**: Websites, Labs, GitHub Repos, Assignments, Team Portfolios.
 
 ---
 
-## 🎨 Features & Functionality
+## 🧩 How `chai-` Classes Work
 
-- **Dark / Soft Mode Toggle**: Click the button to switch themes, and the preference is saved in local storage.  
-- **Interactive Cards**: Hover animations with color gradients make navigation fun.  
-- **External Links**: All cards open resources in a new tab for convenience.  
-- **Lightweight JS Engine**: Handles mode switching and card navigation efficiently.  
+`chai-` classes are **utility-style classes** that dynamically convert class names into inline CSS:
+
+1. **Detect Classes** – The engine scans for all `chai-` prefixed classes.
+
+2. **Parse Names** – Maps class names to CSS properties:
+
+   ```text
+   chai-p-20         → padding: 20px
+   chai-bg-black     → background-color: black
+   chai-text-center  → text-align: center
+   ```
+
+3. **Apply Inline Styles** – Styles are applied dynamically and classes are removed to clean up HTML.
+
+**Example:**
+
+```html
+<div class="chai-p-16 chai-bg-black chai-c-white chai-text-center">
+  Hello ChaiCode
+</div>
+```
+
+Becomes:
+
+```html
+<div style="padding: 16px; background-color: black; color: white; text-align: center;">
+  Hello ChaiCode
+</div>
+```
 
 ---
 
-## ⚡ Technical Overview
+## 🎨 Common `chai-` Classes
 
-- **HTML & CSS**: Fully responsive grid layout, animated cards, and modern typography.  
-- **JavaScript**: Handles theme toggling, card interactions, and initializes dynamic behaviors.  
-- **Local Storage**: Remembers user theme preference between sessions.  
-- **Flexible Grid**: Automatically adapts to screen sizes with `repeat(auto-fit, minmax())`.
+| Category       | Class Example         | CSS Applied               |
+| -------------- | --------------------- | ------------------------- |
+| **Spacing**    | `chai-p-10`           | padding: 10px             |
+|                | `chai-m-20`           | margin: 20px              |
+|                | `chai-px-5`           | padding-left & right: 5px |
+| **Typography** | `chai-fs-18`          | font-size: 18px           |
+|                | `chai-fw-bold`        | font-weight: bold         |
+|                | `chai-text-center`    | text-align: center        |
+| **Colors**     | `chai-c-white`        | color: white              |
+|                | `chai-bg-black`       | background-color: black   |
+| **Flexbox**    | `chai-d-flex`         | display: flex             |
+|                | `chai-justify-center` | justify-content: center   |
+|                | `chai-align-center`   | align-items: center       |
+| **Size**       | `chai-w-200`          | width: 200px              |
+|                | `chai-h-100`          | height: 100px             |
 
 ---
 
-## 🛠️ Usage
+## 🖼️ Layout Sections
 
-1. Open `index.html` in any modern browser.  
-2. Click the 🌙 / ☀️ button to toggle between **Dark** and **Soft Mode**.  
-3. Click any card to access external resources instantly in a new tab.  
+1. **Websites** – Courses, dashboards, coding platforms.
+2. **Labs** – HTML/CSS/JS experiments, Flexbox, Grid games.
+3. **GitHub Repos** – Team repos and personal GitHub profiles.
+4. **Assignments & Blogs** – GitHub assignments, Masterji blogs.
+5. **Eraser & Notes** – Cohort boards, slides, assignments.
+6. **Team Members / Portfolios** – Quick access to ChaiCode team portfolios.
 
 ---
 
-## 🔮 Future Enhancements
+## ⚡ JavaScript Engine
 
-- Add a **search bar** to quickly find resources.  
-- Add **filtering by category** (Websites, Labs, GitHub, Notes).  
-- Add **user authentication** for personalized dashboards.  
-- Implement **animations for transitions** between sections.  
+The engine automatically:
+
+* Detects `chai-` classes in the DOM.
+* Parses and applies inline CSS.
+* Toggles **Dark Mode / Soft Mode**.
+* Opens card links in a new tab.
+
+---
+
+## 🎨 Themes
+
+* **Dark Mode** – Default dark interface.
+* **Soft Mode** – Light, soft-colored interface.
+* **Persistence** – Saves the last used theme in `localStorage`.
+
+---
+
+## 📦 Installation
+
+Static HTML + JS project – no build required:
+
+```bash
+git clone <your-repo-url>
+```
+
+1. Open `index.html` in a browser.
+2. Make sure `main.js` is included.
+3. All `chai-` classes work automatically.
+
+---
+
+## 📌 Future Improvements
+
+* Responsive utilities (e.g., `md:chai-p-20`)
+* Hover, focus, and state-based utilities
+* Animation utilities
+* Theme customization
 
 ---
 
 ## 👨‍💻 Author
 
-Sudhanshu Mundhe  
-© 2026. All rights reserved.
+**Sudhanshu Mundhe** – Creator of ChaiCSS and ChaiCode Resources.
